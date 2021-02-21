@@ -15,6 +15,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func SegueTapped(_ sender: Any) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: .main)
+        
+        guard let greenViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GreenViewController") as?
+            GreenViewController else{
+                print("Couldn't find the view controller")
+                return
+        }
+        
+        greenViewController.modalTransitionStyle = .coverVertical
+        
+       // navigationController?.pushViewController(greenViewController, animated: true)
+        
+        present (greenViewController, animated: true, completion: nil)
+        
+        
+    }
+    
 }
 
